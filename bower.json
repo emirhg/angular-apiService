@@ -1,0 +1,26 @@
+{
+  "name": "angular-apiService",
+  "version": "0.0.1",
+  "homepage": "https://github.com/emirhg/angular-apiService",
+  "authors": [
+    "emir.herrera@gmail.com"
+  ],
+  "description": "An HTTP Handler to request data resources using promises. Very useful to bind an HTTP resource with an AngularJS data model.",
+  "main": "apiService.js",
+  "keywords": [
+    "API",
+    "AngularJS",
+    "Promise",
+    "HTTP",
+    "AJAX",
+    "Model"
+  ],
+  "license": "GNU GPL 3",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
