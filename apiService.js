@@ -40,8 +40,7 @@ angular.module('apiService', [])
             resourceURI = apiBaseURL + resourceURI;
             var deferred = $q.defer();
 
-            if (typeof data[resourceURI] !== 'undefined'){
-                console.debug("Data exists", data[resourceURI])
+            if (typeof data[resourceURI] !== 'undefined' && data[resourceURI] !== null){
                 deferred.resolve(data[resourceURI]);
             }else{
                 $http({
