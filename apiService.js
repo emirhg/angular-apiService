@@ -34,14 +34,14 @@ angular.module('apiService', [])
  * # apiService
  * API Utilities
  */
-  .service('apiService', ['$q', '$http', 'apiBaseURL', '$sce', function ($q, $http, apiBaseURL, $sce) {
+  .service('apiService', ['$q', '$http', 'apiBaseURL', function ($q, $http, apiBaseURL) {
   	var data = {};    
     var getResource = function(resourceURI) {
             resourceURI = apiBaseURL + resourceURI;
             var deferred = $q.defer();
 
             if (typeof data[resourceURI] !== 'undefined' && data[resourceURI] !== null){
-                deferred.resolve($sce.trustAsHtml(data[resourceURI]));
+                deferred.resolve(data[resourceURI]);
             }else{
                 $http({
                         method: 'GET',
@@ -49,7 +49,7 @@ angular.module('apiService', [])
                     })
                     .success(function(response) {
                         data[resourceURI] = response;
-                        return deferred.resolve($sce.trustAsHtml(response));
+                        return deferred.resolve(response);
                     })
                     .error(function(response) {
                         console.error('An error occurred while downloading the resource at '+ resourceURI);
